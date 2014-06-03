@@ -1,0 +1,191 @@
+/* Css originally by mejobloggs  Design by Aran @ stuio7designs.com  Please email me if you use this, as I would love to see how it is being used, also you can join my linkshare to help you with your google ranking */
+
+
+
+body {
+	font-family: trebuchet ms, verdana, arial, tahoma;
+	font-size: 90%;
+	font-weight: bold;
+	color: #666;
+	background-color: white;
+	line-height: 100%;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+/* Set the page width */
+#wrapper-menu-top, #header, #wrapper-content, #wrapper-footer {
+	width: 85%;
+	margin: 0 auto;
+	text-align: left;
+}
+
+#wrapper-menu-top {
+	background: white;
+}
+
+#menu-top {
+	background: transparent;
+	overflow: hidden; /* no idea why this works, but it fixes a FF problem */
+}
+
+#menu-top ul {
+	margin: 0 2px;
+	padding: 1em 0 0 0;
+	list-style: none;
+	font-size: 85%;
+	float: left;
+}
+
+#menu-top li {
+	display: none;
+	float: left;
+}
+
+#menu-top a {
+	float: left;
+	margin:0;
+	padding:0 0 0 0;
+	text-decoration:none;
+	line-height: 1.5em;
+}
+
+#menu-top a span {
+	background: transparent no-repeat right top;
+	padding:5px 3px 4px 6px;
+	color:#5b8fbe;
+	display: block;
+	float: left;
+	cursor: pointer; /* IE doesnt display the hand when you roll over the link for some reason. This fixes it */
+}
+
+ #menu-top a:hover { background-position:0% -42px; }
+ #menu-top a:hover span {	background-position:100% -42px; }
+
+#wrapper-header {
+	background: rgb(47%,65%,86%) top center repeat-x;
+}
+
+#header {
+	background: rgb(47%,65%,86%) no-repeat center top;
+}
+
+#wrapper-header2 {
+	background: transparent;
+}
+
+#wrapper-header3 {
+	background: transparent;
+}
+
+#header h1 {
+	margin: 0 20px;
+	padding: 0;
+	height: 192px;
+	line-height: 3em;
+	color: #ccc;
+	font-size: 130%;
+}
+
+#wrapper-content {
+	background: white no-repeat left top;
+}
+
+* html #wrapper-content { height: 1%; }
+
+#content {
+	background: transparent;
+	width: 100%;
+/*	padding: 5px 245px 5px 40px;*/
+}
+
+#wrapper-menu-page {
+	float: right;
+	width:180px;
+	margin: 20px 30px 3em 2em;
+	background: transparent url('/template/images/menu.png') no-repeat;
+	text-align: center;
+	line-height: 140%;
+	font-family:"Lucida Grande","Lucida Sans Unicode",arial,sans-serif;
+}
+
+* html #wrapper-menu-page { margin-right: 15px; }
+
+#menu-page {  display: none;padding-top: 5px; }
+
+#menu-page ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 90%;
+}
+
+#menu-page h3 {
+	font-size: 75%;
+	text-transform: uppercase;
+	margin: 1em 0 0.3em 0;
+	color: #5b8fbe;
+	font-weight: normal;
+	letter-spacing: 0.15em;
+}
+
+#menu-page a:link, #menu-page a:visited { color: #5a88bd; }
+#menu-page a:hover { color: gold; }
+
+#wrapper-footer {
+	margin-top: 1em;
+	text-align: center;
+}
+
+#footer {
+	margin: 0 20px;
+	background-color: #609cc1;
+	border: 1px solid #ccc;
+	border-bottom: 0;
+	clear: both;
+}
+
+h2 { font-size: 110%; }
+h3 { font-size: 100%; }
+/*
+a:link, a:visited { color: #5b8fbe; text-decoration: none; }
+a:hover{ color: #666; text-decoration: none; }
+*/
+a:link, a:visited { color: #5a88bd; text-decoration: none; }
+a:hover{ color: gold; text-decoration: none; }
+
+
+table {
+width: 100%;
+}
+
+table caption {
+font-size: 120%;
+text-align: left;
+}
+
+table tbody tr:hover,
+table tbody td:hover {
+/*background-color: #5f8dc2;*/
+background-color: rgb(47%,65%,86%);
+color: black;
+}
+table tfoot td {
+border:none;
+text-align: right;
+font-size: 70%;
+}
+
+table#hotels td {
+border-bottom: 2px solid;
+border-color: rgb(19%, 29%, 35%);
+}
+
+table#hotels caption {
+font-size: 80%;
+text-align: left;
+}
+
+
+

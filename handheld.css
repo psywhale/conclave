@@ -1,0 +1,123 @@
+body {
+background-repeat: no-repeat;
+background-color: #aaa;
+background-position: center 0;
+background-attachment:fixed;
+font-family: sans-serif,arial;
+font-size: smaller;
+max-width: 20em;
+}
+
+h2 {
+font-size: 1.3em;
+}
+
+div#container {
+padding:0;
+margin: 2% 15%;
+width:100%;
+}
+
+div#logo img {
+display: block;
+margin-left: auto;
+margin-right: auto;
+width:16em;
+height:auto;
+
+}
+
+#menu {
+margin: 0;
+margin-left: auto;
+margin-right: auto;
+padding: 0;
+width: 100%;
+}
+
+#menu ul {
+margin: 0;
+padding: 0;
+
+width:100%;
+
+}
+
+#menu  ul li {
+margin: 0;
+padding: 0;
+list-style: none inside;
+white-space: nowrap;
+width: 100%;
+text-align: center;
+
+background-color:#999;
+padding-top: 3px;
+padding-bottom: 3px;
+font-size: 1em;
+}
+
+#menu ul li a {
+display: block;
+width: 100%;
+text-decoration:none;
+color: white;
+font-weight: bold;
+}
+
+#menu ul li a:hover {
+background-color: rgb(29%, 39%, 45%);
+color: gold;
+font-weight:bold;
+
+}
+
+#content {
+position: relative;
+margin-top:0;
+width: 100%;
+margin-left: auto;
+margin-right: auto;
+background: white;
+padding-left: 1px;
+padding-right: 1px;
+padding-bottom: 1px;
+
+}
+
+#content a.external {
+  margin-right:3px;
+  background-color: transparent;
+  background-image: url(images/external.png);
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center right;
+  padding-right: 13px;
+}
+
+#content table td {
+max-width: 20em;
+}
+#content p {
+text-indent: 2%;
+}
+
+#content h2 {
+color: rgb(19%, 29%, 35%);
+text-transform: capitalize;
+}
+
+#content b {  
+color: rgb(19%, 29%, 35%);
+}
+#content strong {
+color: rgb(19%, 29%, 35%);
+}
+
+#content img {
+position: relative;
+float: right;
+padding: 3px;
+width: 30%;
+height:auto;
+}
