@@ -171,7 +171,7 @@ function getEventsNotAttending($user_code="") {
    global $CFG;
 mysql_start();
     //$query = "select conferences.title, conferences.event_code from conferences, attendance where attendance.user_code = \"$user_code\" and attendance.event_code != conferences.event_code";
-    $query = "select * from (select conferences.title, conferences.event_code,attendance.user_code from conferences left join attendance on attendance.event_code = conferences.event_code) as t1 where t1.user_code is null or t1.user_code !=\"$user_code\" group by t1.event_code ";
+    $query = "select * from (select conferences.title,conferences.date,conferences.time, conferences.event_code,regex_replace('[0-9:]','',conferences.time) as sorter,attendance.user_code from conferences left join attendance on attendance.event_code = conferences.event_code) as t1 where t1.user_code is null or t1.user_code !=\"$user_code\" order by ti.date,sorter group by t1.event_code ";
     $results = mysql_query($query) or die(mysql_error());
     $events = array();
     $x =0;
