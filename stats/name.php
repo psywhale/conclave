@@ -56,7 +56,7 @@
             
             $payButton = "<input type=button value='Add' onClick=\"window.location='$CFG->wwwsite/stats/adduser2event.php?u=$data[security]&e=$event->event_code&d=$d&z=$z'\"/>";
                  
-            echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$event->event_code\">$event->title</a></td><td>$payButton</td></tr>";
+            echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$event->event_code\">$event->title $event->date $event->time</a></td><td>$payButton</td></tr>";
          }
          
          

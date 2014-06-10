@@ -39,7 +39,7 @@ $result = mysql_query("select * from conferences;");
      $attendance_results = mysql_query($query_attendance);
      $attend_total = mysql_fetch_array($attendance_results);
      if($attend_total[0] > 0)
-     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title</a></td></tr>";
+     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $onfrences->date $conferences->time</a></td></tr>";
      
  } 		
 }
