@@ -89,7 +89,8 @@ TOM;
             ."Seatdata.addColumn('number', 'Seats Available');";
         $events = getLimitsandSeats();
         foreach($events->event as $item){
-            echo "Seatdata.addRow(['$item->name',$item->seats_taken,$item->seats_askedfor,$item->seats_available]);";
+	    $realseats = $item->seats_available - $item->seats_askedfor;
+            echo "Seatdata.addRow(['$item->name',$item->seats_taken,$item->seats_askedfor,$realseats]);";
         }
         echo "var Seatoptions = {'title':'Verified Enrollments',isStacked:true,height:800,chartArea:{height:700}};";        
 
