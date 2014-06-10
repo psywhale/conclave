@@ -216,7 +216,7 @@ $events = getLimitsandSeats();
 foreach($events->event as $bucket){
 	if($bucket->seats_taken >= $bucket->capacity){
 	       if(preg_match("/Night\ Class/",$bucket->name)) $styleold="style=background-color:lightblue";
-		echo "<tr><td align=\"right\"><input type=\"checkbox\" name=\"none\" value=\"yes\" disabled/></td><td align=\"left\" $styleold><font size=\"-1\" style=\"text-decoration: line-through\">$bucket->name $bucket->time  $ $bucket->price</font><br/> Sorry Full!</td></tr>";
+		echo "<tr><td align=\"right\"><input type=\"checkbox\" name=\"none\" value=\"yes\" disabled/></td><td align=\"left\" $styleold><font size=\"-1\" style=\"text-decoration: line-through\">$bucket->name $bucket->time  $ $bucket->price</font> Sorry Full!</td></tr>";
 	}
 	else {
 	    if(preg_match("/Night\ Class/",$bucket->name)) $styleold="style=background-color:lightblue";
@@ -229,6 +229,8 @@ foreach($events->event as $bucket){
 	      }
             if($bucket->price > 65 || $bucket->price == 35) { $salegif = ""; }
               else { $salegif = '<img alt="Sale" title="sale" src="/images/sale.gif" />';}
+            if($date !== $bucket->date) {echo "<tr><td colspan=2><hr/>Week of $bucket->date</td></tr>;} 
+             $date=$bucket->date;
   	    echo "<tr ><td align=\"right\" id=\"$bucket->billing_code".bg."\" onclick=\"javascript:Checkit('$bucket->billing_code');\"><input type=\"checkbox\" id=\"$bucket->billing_code\" name=\"$bucket->billing_code\" value=\"yes\" $checked onclick=\"javascript:Checkit('$bucket->billing_code');\"/></td><td id=\"$bucket->billing_code".bg2."\" align=\"left\" $styleold onclick=\"javascript:Checkit('$bucket->billing_code');\">$bucket->name $bucket->date $bucket->time $ $bucket->price $salegif<br/><font size=\"-3\"> Seats Available: $seat_diff of $bucket->capacity </font></td></tr>";
 	}
 }

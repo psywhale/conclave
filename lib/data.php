@@ -20,7 +20,7 @@ function makePass()
  	global $CFG;
  	mysql_start();
  	$event_cls = new stdClass;
- 	$query = "select * from conferences order by date;";
+ 	$query = "select *,preg_replace('[0-9:]','',time) as sorter from conferences order by date,sorter,time;";
  	$event_results = mysql_query($query) or die("helps");
  	$x=0;
  	while($events = mysql_fetch_array($event_results))
