@@ -95,7 +95,7 @@
         $comped_total = mysql_fetch_array($compd_total_q);
         if($comped_total[0] > 0) { $comp_string = "($comped_total[0])"; }
         
-        echo "<tr><td>$conferences->title : $conferences->date</td><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$conferences->event_code\">$paid_total[0] / $attend_total[0] $comp_string</a></td></tr>";
+        echo "<tr><td>$conferences->title : $conferences->date $conferences->time</td><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$conferences->event_code\">$paid_total[0] / $attend_total[0] $comp_string</a></td></tr>";
         $comp_string ="";
      }
     mysql_stop();
