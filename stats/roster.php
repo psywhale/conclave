@@ -47,7 +47,7 @@ else{
      if($attend_total[0] > 0 ){
 //     if(1){
        if($date != $conferences->date) { 
-		echo "<tr><td><hr/>Week of $conferences->date</td></tr>"; 
+		echo "<tr><td><hr/><strong>Week of $conferences->date</strong></td></tr>"; 
 	}  
        $date = $conferences->date;
      echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $conferences->date $conferences->time</a></td></tr>";

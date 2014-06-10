@@ -87,7 +87,7 @@
      $attendance_results = mysql_query($query_attendance);
      $attend_total = mysql_fetch_array($attendance_results);
      if($attend_total[0] > 0){
-	if($date !== $conferences->date) { echo "<tr><td><hr/>Week of $conferences->date</td></tr>"; }
+	if($date !== $conferences->date) { echo "<tr><td><hr/><strong>Week of $conferences->date</strong></td></tr>"; }
         $date = $conferences->date;
         $paid_total_q = mysql_query("select count(*) from attendance where event_code = \"$conferences->event_code\" and paid = \"Y\";");
         $compd_total_q = mysql_query("select count(*) from attendance where event_code = \"$conferences->event_code\" and paid = \"S\";");

@@ -54,7 +54,7 @@
          $events = getEventsNotAttending($data[security]);
          foreach($events as $event) {
             if($date !== $event->date) {
-		echo "<tr><td colspan=2><hr/></td></tr>";
+		echo "<tr><td colspan=2><hr/><strong>Week of $event->date</strong></td></tr>";
 	    }
             $payButton = "<input type=button value='Add' onClick=\"window.location='$CFG->wwwsite/stats/adduser2event.php?u=$data[security]&e=$event->event_code&d=$d&z=$z'\"/>";
                  
