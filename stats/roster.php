@@ -43,7 +43,7 @@ mysql_start();
      if($attend_total[0] > 0)
        if($date !== $conferences->date) { echo "<tr><td><hr/></td></tr>"; }  
        $date = $conferences->date;
-     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $confrences->date $conferences->time</a></td></tr>";
+     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $conferences->date $conferences->time</a></td></tr>";
      
  } 		
 }
