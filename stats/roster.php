@@ -29,7 +29,7 @@ if($d) {
 
 }
 else{
-mysql_start();
+ mysql_start();
 //$result = mysql_query("select * from conferences;");
  $result = getEvents();
  printheader($a);
@@ -39,16 +39,21 @@ mysql_start();
  
  //while($conferences = mysql_fetch_object($result)){
  foreach($result as $conferences) {
-     $query_attendance = "select count(*) from attendance where event_code = \"$conferences->event_code\";";
-     $attendance_results = mysql_query($query_attendance);
-     $attend_total = mysql_fetch_array($attendance_results);
-     if($attend_total[0] > 0)
-       if($date !== $conferences->date) { echo "<tr><td><hr/></td></tr>"; }  
+  mysql_start();
+    $query_attendance = "select count(*) from attendance where event_code = \"$conferences->event_code\";";
+    $attendance_results = mysql_query($query_attendance) or die(errorconsole(mysql_error()));
+    $attend_total = mysql_fetch_array($attendance_results);
+     errorconsole($attend_total);
+     if($attend_total[0] > 0 ){
+//     if(1){
+       if($date != $conferences->date) { 
+		echo "<tr><td><hr/>Week of $conferences->date</td></tr>"; 
+	}  
        $date = $conferences->date;
-      errorconsole($date);
      echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $conferences->date $conferences->time</a></td></tr>";
      
- } 		
+     } 		
+ }
 }
 // mysql_stop();
 echo "</table><a href=$CFG->wwwsite/stats/index.php?z=roster>Back to Rosters</a>";
