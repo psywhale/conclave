@@ -239,7 +239,7 @@ echo '<tr><td></td><td >&nbsp;</td></tr>';
 //echo     '<tr><td align="right">Special Code </td><td align="left"><input name="specialcode" type="text" maxlength="10" size="10"></td></tr>';
 
 
-echo '<tr><td></td><td align="center"><input name="Register" type="submit" value="Register" class="button"/></TD></tr></form></table>';
+echo '<tr><td></td><td align="center"><input name="Register" type="submit" value="Register" /></TD></tr></form></table>';
 }
 
 else {
