@@ -82,6 +82,7 @@
  		"<tr><th>Event</th><th>Participant Count<br/>Paid / Total</th></tr>";
  
  foreach($result as $conferences){
+   mysql_start();
      $query_attendance = "select count(*) from attendance where event_code = \"$conferences->event_code\";";
      $attendance_results = mysql_query($query_attendance);
      $attend_total = mysql_fetch_array($attendance_results);
@@ -95,6 +96,7 @@
         echo "<tr><td>$conferences->title : $conferences->date</td><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$conferences->event_code\">$paid_total[0] / $attend_total[0] $comp_string</a></td></tr>";
         $comp_string ="";
      }
+    mysql_stop();
  } 		
 
  mysql_stop();
