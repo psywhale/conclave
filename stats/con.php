@@ -75,13 +75,13 @@
 
 
  		
- $result = mysql_query("select * from conferences order by date;");
+ $result = getEvents();
  
  echo "<p>" .
  		"<table class=\"special\">" .
  		"<tr><th>Event</th><th>Participant Count<br/>Paid / Total</th></tr>";
  
- while($conferences = mysql_fetch_object($result)){
+ foreach($result as $conferences){
      $query_attendance = "select count(*) from attendance where event_code = \"$conferences->event_code\";";
      $attendance_results = mysql_query($query_attendance);
      $attend_total = mysql_fetch_array($attendance_results);
