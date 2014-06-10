@@ -125,7 +125,7 @@ function getAttendance($user_code="") {
 function getEvents() {
   global $CFG;
   mysql_start();
-  $query = "select *,regex_replace('[0-9:],'',time) as sorter from conferences order by date,sorter,time;";
+  $query = "select *,regex_replace('[0-9:]','',time) as sorter from conferences order by date,sorter,time;";
   $results = mysql_query($query) or die(mysql_error());
   $events=array();
   $x=0;
