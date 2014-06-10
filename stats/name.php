@@ -53,10 +53,13 @@
          echo "<p><hr/><table><tr><th>Events Not Attending</th><th>Add?</th></tr>";
          $events = getEventsNotAttending($data[security]);
          foreach($events as $event) {
-            
+            if($date !== $event->date) {
+		echo "<tr><td colspan=2><hr/></td></tr>";
+	    }
             $payButton = "<input type=button value='Add' onClick=\"window.location='$CFG->wwwsite/stats/adduser2event.php?u=$data[security]&e=$event->event_code&d=$d&z=$z'\"/>";
                  
             echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=con&d=$event->event_code\">$event->title $event->date $event->time</a></td><td>$payButton</td></tr>";
+	    $date = $event->date;
          }
          
          
