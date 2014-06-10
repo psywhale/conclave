@@ -28,18 +28,22 @@ if($d) {
 }
 else{
 mysql_start();
-$result = mysql_query("select * from conferences;");
+//$result = mysql_query("select * from conferences;");
+ $result = getEvents();
  printheader($a);
  echo "<p> Click Event Name to print roster" .
  		"<table class=\"special\">" .
  		"<tr><th>Event</th></tr>";
  
- while($conferences = mysql_fetch_object($result)){
+ //while($conferences = mysql_fetch_object($result)){
+ foreach($result as $conferences) {
      $query_attendance = "select count(*) from attendance where event_code = \"$conferences->event_code\";";
      $attendance_results = mysql_query($query_attendance);
      $attend_total = mysql_fetch_array($attendance_results);
      if($attend_total[0] > 0)
-     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $onfrences->date $conferences->time</a></td></tr>";
+       if($date !== $conferences->date) { echo "<tr><td><hr/></td></tr>"; }  
+       $date = $conferences->date
+     echo "<tr><td><a href=\"$CFG->wwwsite/stats/index.php?z=roster&d=$conferences->event_code\">$conferences->title $confrences->date $conferences->time</a></td></tr>";
      
  } 		
 }
